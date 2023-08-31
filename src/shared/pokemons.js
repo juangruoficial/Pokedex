@@ -1,0 +1,43 @@
+const bgStylePokemonType = {
+  fire: "bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-500",
+  water: "bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-500",
+  grass: "bg-gradient-to-r from-green-400 via-green-500 to-green-600",
+  electric: "bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600",
+  ice: "bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400",
+  fighting: "bg-gradient-to-r from-yellow-600 via-red-600 to-yellow-600",
+  poison: "bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600",
+  ground: "bg-gradient-to-r from-yellow-700 via-yellow-800 to-yellow-900",
+  flying: "bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600",
+  psychic: "bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600",
+  bug: "bg-gradient-to-r from-green-400 via-green-500 to-green-600",
+  rock: "bg-gradient-to-r from-yellow-800 via-yellow-900 to-yellow-900",
+  ghost: "bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600",
+  dark: "bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900",
+  dragon: "bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600",
+  steel: "bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600",
+  fairy: "bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600",
+  normal: "bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600",
+};
+
+const borderStylePokemonType = {
+  fire: "border-orange-400",
+  water: "border-blue-400",
+  grass: "border-green-400",
+  electric: "border-yellow-400",
+  ice: "border-blue-200",
+  fighting: "border-red-600",
+  poison: "border-purple-400",
+  ground: "border-yellow-800",
+  flying: "border-blue-400",
+  psychic: "border-pink-400",
+  bug: "border-green-400",
+  rock: "border-yellow-800",
+  ghost: "border-purple-400",
+  dark: "border-gray-700",
+  dragon: "border-purple-400",
+  steel: "border-gray-400",
+  fairy: "border-pink-400",
+  normal: "border-gray-400",
+};
+
+export { bgStylePokemonType, borderStylePokemonType };
