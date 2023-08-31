@@ -17,7 +17,7 @@ const PokemonDetail = () => {
   return (
     <main className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
       <Link
-        to="/pokedex"
+        to="/pokedex/"
         className="w-20 flex self-start justify-center items-center gap-2 text-gray-600 hover:text-gray-800 transition duration-300 cursor-pointer hover:underline
       "
       >
@@ -25,7 +25,7 @@ const PokemonDetail = () => {
       </Link>
       <article className="flex flex-col gap-6 w-full max-w-3xl bg-white rounded-lg shadow-md p-6">
         <header
-          className={`relative h-32 md:h-40 lg:h-48 mt-5 mb-12 text-center ${
+          className={`relative h-24 md:h-32 lg:h-40 mt-5 mb-12 text-center ${
             bgStylePokemonType[pokemonData?.types[0]]
           } rounded-t-lg p-4`}
         >

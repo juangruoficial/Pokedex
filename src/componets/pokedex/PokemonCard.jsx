@@ -31,7 +31,7 @@ const PokemonCard = ({ pokemonUrl }) => {
           bgStylePokemonType[pokemonInfo?.types[0]]
         } `}
       >
-        <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 h-[65px] w-[65px]">
+        <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 h-[80px] w-[80px]">
           <img
             className="h-full w-full object-contain"
             src={pokemonInfo?.image}
