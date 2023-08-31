@@ -3,10 +3,12 @@ import PokemonList from "../componets/pokedex/PokemonList";
 import usePokedex from "../hook/usePokedex";
 import { paginationData } from "../utils/pagination";
 import Pagination from "../componets/pokedex/Pagination";
-import { bgStylePokemonType } from "../shared/pokemons";
+
+import FormFilterPokemons from "../componets/pokedex/FormFilterPokemons";
 
 const Pokedex = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage, setItemsPerPage] = useState(10);
 
   const {
     name,
@@ -21,47 +23,23 @@ const Pokedex = () => {
 
   const { itemsCurrentPage, lastPage, pagesInCurrentBlock } = paginationData(
     pokemonsFilteredByName,
-    currentPage
+    currentPage,
+    itemsPerPage
   );
 
   return (
     <main className="min-h-screen bg-gray-100">
-      <section className="bg-white py-6 px-4 md:px-8 lg:px-16">
-        <p className="text-center text-gray-700">
-          <span className="font-semibold text-gray-800 mr-2 cursor-pointer hover:text-red-500 transition duration-300">
-            Welcome {name}
-          </span>
-        </p>
-        <form className="flex flex-col md:flex-row gap-4 mt-4">
-          <div className="flex-grow">
-            <input
-              value={pokemonName}
-              onChange={handleChange(setPokemonName)}
-              type="text"
-              placeholder="Search Pokemon..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936]"
-            />
-          </div>
-          <div className="flex-grow md:w-48">
-            <select
-              value={pokemonType}
-              onChange={handleChange(setPokemonType)}
-              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936] `}
-            >
-              <option value="">All Pokemon</option>
-              {types.map((type) => (
-                <option
-                  value={type.name}
-                  className="capitalize"
-                  key={type.name}
-                >
-                  {type.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        </form>
-      </section>
+      <FormFilterPokemons
+        name={name}
+        setItemsPerPage={setItemsPerPage}
+        pokemonName={pokemonName}
+        setPokemonName={setPokemonName}
+        pokemonType={pokemonType}
+        setPokemonType={setPokemonType}
+        handleChange={handleChange}
+        types={types}
+        itemsPerPage={itemsPerPage}
+      />
 
       <Pagination
         lastPage={lastPage}

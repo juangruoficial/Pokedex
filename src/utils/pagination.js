@@ -1,6 +1,6 @@
-const paginationData = (items, currentPage) => {
+const paginationData = (items, currentPage, itemsPerPage) => {
   //Cantidad de items por pagina
-  const ITEMS_PER_PAGE = 20;
+  const ITEMS_PER_PAGE = itemsPerPage;
 
   //Pagina actual
   const indexOfLastItem = currentPage * ITEMS_PER_PAGE;
