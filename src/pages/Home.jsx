@@ -1,6 +1,5 @@
+import FormName from "../componets/home/FormName";
 import FooterPokeball from "../componets/layout/FooterPokeball";
-
-import FormName from "../componets/home/formName";
 
 const Home = () => {
   return (
