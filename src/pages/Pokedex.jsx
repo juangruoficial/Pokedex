@@ -22,32 +22,41 @@ const Pokedex = () => {
     pokemonsFilteredByName,
     currentPage
   );
-  console.log(pagesInCurrentBlock);
 
   return (
-    <main>
-      <section>
-        <p>
-          <span>Welcome {name}</span>
+    <main className="min-h-screen bg-gray-100">
+      <section className="bg-white py-6 px-4 md:px-8 lg:px-16">
+        <p className="text-center text-gray-700">
+          <span className="font-semibold">Welcome {name}</span>
         </p>
-        <form>
-          <div>
+        <form className="flex flex-col md:flex-row gap-4 mt-4">
+          <div className="flex-grow">
             <input
               value={pokemonName}
               onChange={handleChange(setPokemonName)}
               type="text"
-              placeholder="Search pokemon..."
+              placeholder="Search Pokemon..."
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936]"
             />
           </div>
-
-          <select value={pokemonType} onChange={handleChange(setPokemonType)}>
-            <option value="">All pokemons</option>
-            {types.map((type) => (
-              <option value={type.name} className="capitalize" key={type.name}>
-                {type.name}
-              </option>
-            ))}
-          </select>
+          <div className="flex-grow md:w-48">
+            <select
+              value={pokemonType}
+              onChange={handleChange(setPokemonType)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936]"
+            >
+              <option value="">All Pokemon</option>
+              {types.map((type) => (
+                <option
+                  value={type.name}
+                  className="capitalize"
+                  key={type.name}
+                >
+                  {type.name}
+                </option>
+              ))}
+            </select>
+          </div>
         </form>
       </section>
 
@@ -56,10 +65,20 @@ const Pokedex = () => {
         pagesInCurrentBlock={pagesInCurrentBlock}
         setCurrentPage={setCurrentPage}
         currentPage={currentPage}
+        className="py-4 px-4 md:px-8 lg:px-16"
       />
 
       <PokemonList pokemons={itemsCurrentPage} />
+
+      <Pagination
+        lastPage={lastPage}
+        pagesInCurrentBlock={pagesInCurrentBlock}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+        className="py-4 px-4 md:px-8 lg:px-16"
+      />
     </main>
   );
 };
+
 export default Pokedex;
