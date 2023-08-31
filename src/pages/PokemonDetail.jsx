@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getPokemonById } from "../services/pokemons.services";
 import StatBarList from "../componets/pokemonDetail/StatBarList";
 import { bgStylePokemonType } from "../shared/pokemons";
@@ -16,6 +16,13 @@ const PokemonDetail = () => {
 
   return (
     <main className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+      <Link
+        to="/pokedex"
+        className="w-20 flex self-start justify-center items-center gap-2 text-gray-600 hover:text-gray-800 transition duration-300 cursor-pointer hover:underline
+      "
+      >
+        <i className="bx bx-left-arrow-alt bx-fade-right text-4xl"></i>
+      </Link>
       <article className="flex flex-col gap-6 w-full max-w-3xl bg-white rounded-lg shadow-md p-6">
         <header
           className={`relative h-32 md:h-40 lg:h-48 mt-5 mb-12 text-center ${
@@ -28,7 +35,7 @@ const PokemonDetail = () => {
         </header>
         <section>
           <article className="mb-4">
-            <span className="block text-center text-gray-600 border border-gray-300 rounded-md px-4 py-1 mb-2 w-16 mx-auto font-semibold text-xl md:text-2xl lg:text-3xl">
+            <span className="block text-center text-gray-600 border border-gray-300 rounded-md px-4 py-1 mb-2 m font-semibold text-xl md:text-2xl lg:text-3xl">
               #{pokemonData?.id}
             </span>
             <h3 className="text-center text-2xl md:text-3xl font-semibold capitalize mt-2 mb-4 text-gray-800 border-b border-gray-300 pb-2 w-11/12 mx-auto md:w-full 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl">

@@ -3,6 +3,7 @@ import PokemonList from "../componets/pokedex/PokemonList";
 import usePokedex from "../hook/usePokedex";
 import { paginationData } from "../utils/pagination";
 import Pagination from "../componets/pokedex/Pagination";
+import { bgStylePokemonType } from "../shared/pokemons";
 
 const Pokedex = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -27,7 +28,9 @@ const Pokedex = () => {
     <main className="min-h-screen bg-gray-100">
       <section className="bg-white py-6 px-4 md:px-8 lg:px-16">
         <p className="text-center text-gray-700">
-          <span className="font-semibold">Welcome {name}</span>
+          <span className="font-semibold text-gray-800 mr-2 cursor-pointer hover:text-red-500 transition duration-300">
+            Welcome {name}
+          </span>
         </p>
         <form className="flex flex-col md:flex-row gap-4 mt-4">
           <div className="flex-grow">
@@ -43,7 +46,7 @@ const Pokedex = () => {
             <select
               value={pokemonType}
               onChange={handleChange(setPokemonType)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936]"
+              className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936] `}
             >
               <option value="">All Pokemon</option>
               {types.map((type) => (
