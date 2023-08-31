@@ -15,7 +15,12 @@ const HeaderPokeball = ({ children }) => {
           </div>
         </div>
 
-        <div className="h-12 bg-black relative">
+        <div className="flex h-12 bg-black relative">
+          <div className="flex absolute right-[120px] top-[0] justify-center items-center">
+            <p className="text-white">Press to Logout</p>
+            <i className="bx bxs-exit bx-fade-right bx-flip-vertical text-4xl text-white "></i>
+          </div>
+
           <button
             onClick={handleLogout}
             className="h-16 bg-white aspect-square rounded-full absolute right-0 

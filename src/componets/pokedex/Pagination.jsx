@@ -36,7 +36,7 @@ const Pagination = ({
           className="cursor-pointer hover:text-red-500 transition"
           onClick={handleFirstPage}
         >
-          {"<<"}
+          <i className="bx bxs-chevrons-left text-xl"></i>
         </li>
       )}
       {currentPage > 1 && (
@@ -44,7 +44,7 @@ const Pagination = ({
           className="cursor-pointer hover:text-red-500 transition"
           onClick={handleClickPrevPage}
         >
-          {"<"}
+          <i className="bx bxs-chevron-left bx-flashing text-2xl"></i>
         </li>
       )}
       {pagesInCurrentBlock.map((page) => (
@@ -65,7 +65,10 @@ const Pagination = ({
           className="cursor-pointer hover:text-red-500 transition"
           onClick={handleClickNextPage}
         >
-          {">"}
+          <i
+            className="bx bx-chevron-right bx-flashing bx-flip-vertical text-2xl 
+          "
+          ></i>
         </li>
       )}
       {currentPage < lastPage && (
@@ -73,7 +76,7 @@ const Pagination = ({
           className="cursor-pointer hover:text-red-500 transition"
           onClick={handleLastPage}
         >
-          {">>"}
+          <i className="bx bxs-chevrons-right text-xl"></i>
         </li>
       )}
     </ul>
