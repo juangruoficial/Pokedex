@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import { bgStyleBarProgressStat } from "../../shared/pokemons";
 
-const BarProgressStat = ({ stat }) => {
+const BarProgressStat = ({ stat, pokemonData }) => {
   const MAX_STAT_VALUE = 255;
   const [percentage, setPercentage] = useState(0);
 
@@ -37,7 +38,9 @@ const BarProgressStat = ({ stat }) => {
             width: `${percentage}%`,
             transition: "width 0.3s ease-in-out",
           }}
-          className="h-full bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 rounded-md"
+          className={`h-full bg-gradient-to-r ${
+            bgStyleBarProgressStat[pokemonData.types[0]]
+          } `}
         ></div>
       </div>
     </article>

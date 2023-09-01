@@ -89,7 +89,7 @@ const PokemonInfo = ({ pokemonData }) => {
         </section>
       </div>
 
-      <StatBarList stats={pokemonData?.stats} />
+      <StatBarList stats={pokemonData?.stats} pokemonData={pokemonData} />
     </article>
   );
 };
