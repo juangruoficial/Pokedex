@@ -15,7 +15,7 @@ const PokemonDetail = () => {
   }, []);
 
   return (
-    <main className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+    <main className="flex flex-col min-h-screen bg-gray-100">
       <Link
         to="/pokedex/"
         className="w-20 flex self-start justify-center items-center gap-2 text-gray-600 hover:text-gray-800 transition duration-300 cursor-pointer hover:underline

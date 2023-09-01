@@ -2,9 +2,9 @@ import BarProgressStat from "./BarProgressStat";
 
 const StatBarList = ({ stats }) => {
   return (
-    <section>
-      <h2>Stats</h2>
-      <section>
+    <section className="grid mt-6 sm:w-[40%]">
+      <h2 className="text-xl font-semibold mb-2">Stats</h2>
+      <section className="space-y-4">
         {stats?.map((stat) => (
           <BarProgressStat key={stat.name} stat={stat} />
         ))}
@@ -12,4 +12,5 @@ const StatBarList = ({ stats }) => {
     </section>
   );
 };
+
 export default StatBarList;

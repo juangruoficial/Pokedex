@@ -24,12 +24,14 @@ const BarProgressStat = ({ stat }) => {
   }, [stat.value]);
 
   return (
-    <article>
+    <article className="mb-4">
       <section className="flex justify-between px-1">
-        <h5>{stat.name}</h5>
-        <span>{stat.value}/255</span>
+        <h5 className="capitalize text-xs md:text-sm font-medium">
+          {stat.name}
+        </h5>
+        <span className="text-xs md:text-sm font-medium">{stat.value}/255</span>
       </section>
-      <div className="h-6 bg-slate-300 rounded-md">
+      <div className="h-2 bg-gray-300 rounded-md">
         <div
           style={{
             width: `${percentage}%`,
