@@ -1,3 +1,4 @@
+import usePokemonInfo from "../../hook/usePokemonInfo";
 import {
   bgPrimaryColorsTypes,
   bgStylePokemonType,
@@ -5,6 +6,7 @@ import {
 import StatBarList from "./StatBarList";
 
 const PokemonInfo = ({ pokemonData }) => {
+  const { isFavorite, addToFavorites } = usePokemonInfo({ pokemonData });
   return (
     <article className="flex flex-col gap-6 w-full max-w-3xl bg-white rounded-lg shadow-md p-6 mx-auto sm:flex-row">
       <div className=" sm:w-[70%]">
@@ -13,7 +15,7 @@ const PokemonInfo = ({ pokemonData }) => {
             bgStylePokemonType[pokemonData?.types[0]]
           } rounded-t-lg p-4`}
         >
-          <div className="mx-auto w-24 md:w-48 absolute left-1/2 transform -translate-x-1/2 -top-16">
+          <div className="mx-auto w-24 md:w-48 absolute left-1/2 transform -translate-x-1/2 -top-10">
             <img src={pokemonData?.image} alt="Pokemon" className="w-full" />
           </div>
         </header>
@@ -23,7 +25,16 @@ const PokemonInfo = ({ pokemonData }) => {
               #{pokemonData?.id}
             </span>
             <h3 className="text-center text-xl md:text-4xl font-semibold capitalize  text-gray-800 border-b border-gray-300 pb-2 w-11/12 mx-auto">
-              {pokemonData?.name}
+              <span>{pokemonData?.name}</span>
+
+              <button
+                onClick={addToFavorites}
+                className={`ml-2 text-2xl hover:scale-125 ${
+                  isFavorite ? "text-red-500" : "text-gray-400"
+                }`}
+              >
+                <i className="bx bxs-heart"></i>
+              </button>
             </h3>
 
             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 ">

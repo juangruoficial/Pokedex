@@ -27,9 +27,9 @@ const PokemonCard = ({ pokemonUrl }) => {
       } hover:shadow-lg transform hover:-translate-y-1 transition-all`}
     >
       <header
-        className={`h-[80px] relative mb-8 ${
+        className={`h-[80px] relative mb-2 ${
           bgStylePokemonType[pokemonInfo?.types[0]]
-        } `}
+        }`}
       >
         <div className="absolute left-1/2 -translate-x-1/2 -bottom-4 h-[80px] w-[80px]">
           <img
@@ -39,7 +39,7 @@ const PokemonCard = ({ pokemonUrl }) => {
           />
         </div>
       </header>
-      <section className="p-4">
+      <section className="p-4 relative">
         <h3 className="text-lg font-semibold mb-1">{pokemonInfo?.name}</h3>
         <h4 className="text-gray-600 mb-2">
           {joinPokemonTypes(pokemonInfo?.types)}
