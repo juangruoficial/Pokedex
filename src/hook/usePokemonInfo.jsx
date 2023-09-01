@@ -1,17 +1,25 @@
 import { useEffect, useState } from "react";
 
+const initialState = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
+
 const usePokemonInfo = ({ pokemonData }) => {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [favoritePokemons, setFavoritePokemons] = useState([]);
+  const [favoritePokemons, setFavoritePokemons] = useState(initialState);
 
   useEffect(() => {
     const favoritesFromLocalStorage = localStorage.getItem("favoritePokemons");
-    console.log(favoritesFromLocalStorage);
     if (favoritesFromLocalStorage) {
-      const parsedFavorites = JSON.parse(favoritesFromLocalStorage);
-      setFavoritePokemons(parsedFavorites);
+      const isAlreadyFavorite = JSON.parse(favoritesFromLocalStorage).some(
+        (favPokemon) =>
+          favPokemon?.id === pokemonData?.id && favPokemon.isFavorite === true
+      );
+
+      if (isAlreadyFavorite) {
+        setFavoritePokemons(JSON.parse(favoritesFromLocalStorage));
+        setIsFavorite(true);
+      }
     }
-  }, []);
+  }, [pokemonData]);
 
   useEffect(() => {
     localStorage.setItem("favoritePokemons", JSON.stringify(favoritePokemons));
@@ -20,11 +28,10 @@ const usePokemonInfo = ({ pokemonData }) => {
   const addToFavorites = () => {
     if (isFavorite) {
       const newFavoritePokemons = favoritePokemons.filter(
-        (favPokemon) => favPokemon.id !== pokemonData.id
+        (favPokemon) => favPokemon?.id !== pokemonData?.id
       );
       setFavoritePokemons(newFavoritePokemons);
       setIsFavorite(false);
-      return;
     } else {
       const newFavoritePokemon = { ...pokemonData, isFavorite: true };
       const newFavoritePokemons = [...favoritePokemons, newFavoritePokemon];
@@ -37,6 +44,8 @@ const usePokemonInfo = ({ pokemonData }) => {
     isFavorite,
     addToFavorites,
     setIsFavorite,
+    favoritePokemons,
   };
 };
+
 export default usePokemonInfo;
