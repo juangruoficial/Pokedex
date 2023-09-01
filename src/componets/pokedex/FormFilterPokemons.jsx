@@ -63,7 +63,7 @@ const FormFilterPokemons = ({
           <select
             value={pokemonType}
             onChange={handleChange(setPokemonType)}
-            className={`w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936] `}
+            className={`capitalize w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-[#FE1936] `}
           >
             <option value="">All Pokemon</option>
             {types.map((type) => (
