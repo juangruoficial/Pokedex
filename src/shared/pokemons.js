@@ -40,4 +40,25 @@ const borderStylePokemonType = {
   normal: "border-gray-400",
 };
 
-export { bgStylePokemonType, borderStylePokemonType };
+const bgPrimaryColorsTypes = {
+  fire: "bg-red-500",
+  water: "bg-blue-500",
+  grass: "bg-green-500",
+  electric: "bg-yellow-500",
+  ice: "bg-blue-300",
+  fighting: "bg-red-600",
+  poison: "bg-purple-500",
+  ground: "bg-yellow-800",
+  flying: "bg-blue-500",
+  psychic: "bg-pink-500",
+  bug: "bg-green-500",
+  rock: "bg-yellow-800",
+  ghost: "bg-purple-500",
+  dark: "bg-gray-700",
+  dragon: "bg-purple-500",
+  steel: "bg-gray-500",
+  fairy: "bg-pink-500",
+  normal: "bg-gray-500",
+};
+
+export { bgStylePokemonType, borderStylePokemonType, bgPrimaryColorsTypes };

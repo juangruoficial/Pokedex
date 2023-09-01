@@ -1,4 +1,7 @@
-import { bgStylePokemonType } from "../../shared/pokemons";
+import {
+  bgPrimaryColorsTypes,
+  bgStylePokemonType,
+} from "../../shared/pokemons";
 import StatBarList from "./StatBarList";
 
 const PokemonInfo = ({ pokemonData }) => {
@@ -47,7 +50,7 @@ const PokemonInfo = ({ pokemonData }) => {
               {pokemonData?.types.map((type) => (
                 <span
                   key={type}
-                  className={`text-sm px-3 py-2 rounded-full font-semibold ${bgStylePokemonType[type]} text-white`}
+                  className={`text-sm px-3 py-2 rounded-full font-semibold ${bgPrimaryColorsTypes[type]} text-white`}
                 >
                   {type}
                 </span>
