@@ -54,7 +54,7 @@ const PokemonInfo = ({ pokemonData }) => {
           </article>
 
           <article className="grid gap-4 md:grid-cols-2">
-            <div className="flex flex-col gap-2 justify-between items-center  p-4 bg-gray-100 rounded-md">
+            <div className="flex flex-col gap-4  items-center justify-center p-4 bg-gray-100 rounded-md">
               <h4 className="text-gray-600 font-semibold capitalize text-lg md:text-xl">
                 Types
               </h4>
@@ -70,11 +70,11 @@ const PokemonInfo = ({ pokemonData }) => {
               </div>
             </div>
 
-            <div className="flex flex-col gap-2 justify-between items-center  p-4 bg-gray-100 rounded-md">
+            <div className="grid gap-4  place-items-center  p-4 bg-gray-100 rounded-md">
               <p className="text-gray-600 font-semibold capitalize text-lg md:text-xl">
                 Abilities
               </p>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-2 justify-center items-center">
                 {pokemonData?.abilities.map((ability) => (
                   <span
                     key={ability}

@@ -16,7 +16,7 @@ const Movements = ({ pokemonData }) => {
       controls.start((i) => ({
         opacity: 1,
         y: 0,
-        transition: { delay: i * 0.08 },
+        transition: { delay: i * 0.03 },
       }));
     }
   }, [controls, showMoves]);
