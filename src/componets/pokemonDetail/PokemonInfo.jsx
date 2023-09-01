@@ -15,7 +15,7 @@ const PokemonInfo = ({ pokemonData }) => {
             bgStylePokemonType[pokemonData?.types[0]]
           } rounded-t-lg p-4`}
         >
-          <div className="mx-auto w-24 md:w-48 absolute left-1/2 transform -translate-x-1/2 -top-10">
+          <div className="mx-auto w-24 md:w-32 absolute left-1/2 transform -translate-x-1/2 -top-10">
             <img src={pokemonData?.image} alt="Pokemon" className="w-full" />
           </div>
         </header>
