@@ -6,7 +6,7 @@ import {
 } from "../services/pokemons.services";
 import { useSelector } from "react-redux";
 
-const usePokedex = () => {
+const usePokedex = (setCurrentPage) => {
   const [pokemons, setPokemons] = useState([]);
   const [pokemonName, setPokemonName] = useState("");
   const [pokemonType, setPokemonType] = useState("");
@@ -28,6 +28,7 @@ const usePokedex = () => {
         .then((data) => setPokemons(data))
         .catch((error) => console.log(error));
     }
+    setCurrentPage(1);
   }, [pokemonType]);
 
   useEffect(() => {

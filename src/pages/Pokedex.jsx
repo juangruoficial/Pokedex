@@ -19,7 +19,7 @@ const Pokedex = () => {
     handleChange,
     pokemonsFilteredByName,
     types,
-  } = usePokedex();
+  } = usePokedex(setCurrentPage);
 
   const { itemsCurrentPage, lastPage, pagesInCurrentBlock } = paginationData(
     pokemonsFilteredByName,
