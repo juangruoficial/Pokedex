@@ -24,7 +24,7 @@ const PokemonDetail = () => {
         >
           <i className="bx bx-left-arrow-alt bx-fade-right text-4xl"></i>
         </Link>
-        <Link to="/pokedex/favorite">
+        <Link className="flex items-center gap-4" to="/pokedex/favorite">
           Favorites
           <i className="bx bxs-heart text-4xl text-red-500"></i>
         </Link>
