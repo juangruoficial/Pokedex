@@ -24,7 +24,13 @@ const PokemonDetail = () => {
         >
           <i className="bx bx-left-arrow-alt bx-fade-right text-4xl"></i>
         </Link>
-        <Link className="flex items-center gap-4" to="/pokedex/favorite">
+        <Link
+          className="mr-5 flex items-center gap-2 text-gray-600 
+        hover:text-red-500 transition duration-300 cursor-pointer 
+        hover:scale-110 transform origin-center
+        "
+          to="/pokedex/favorite"
+        >
           Favorites
           <i className="bx bxs-heart text-4xl text-red-500"></i>
         </Link>
