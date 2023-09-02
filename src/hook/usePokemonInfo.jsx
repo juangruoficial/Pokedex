@@ -5,6 +5,7 @@ const initialState = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
 const usePokemonInfo = ({ pokemonData }) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [favoritePokemons, setFavoritePokemons] = useState(initialState);
+  console.log("favoritePokemons", favoritePokemons);
 
   useEffect(() => {
     const favoritesFromLocalStorage = localStorage.getItem("favoritePokemons");
