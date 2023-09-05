@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-const initialState = JSON.parse(localStorage.getItem("favoritePokemons")) || [];
-
 const usePokemonInfo = ({ pokemonData }) => {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [favoritePokemons, setFavoritePokemons] = useState(initialState);
+  const [favoritePokemons, setFavoritePokemons] = useState(
+    JSON.parse(localStorage.getItem("favoritePokemons")) || []
+  );
   console.log("favoritePokemons", favoritePokemons);
 
   useEffect(() => {
